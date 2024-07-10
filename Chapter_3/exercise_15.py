@@ -1,6 +1,6 @@
 # Program: To subract the sum of series from value of pi
 import math
-n = int(input("Enter the 'n' for finding the sum of seroes upto n terms: "))
+n = int(input("Enter the 'n' for finding the sum of series upto n terms: "))
 
 def answer(n):
     sum = 0.0

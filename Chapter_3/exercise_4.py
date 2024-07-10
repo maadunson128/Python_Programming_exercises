@@ -1,7 +1,7 @@
 #Program: To find the distance of lightning strike
 
 def distance(seconds):
-    feet_distance = 11000 * seconds
+    feet_distance = 1100 * seconds
     miles_distance = feet_distance / 5280
     print(f"The distance b/w you and lightning strike: {round(miles_distance, 4)} miles")
 

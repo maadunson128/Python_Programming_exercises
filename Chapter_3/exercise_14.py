@@ -7,7 +7,7 @@ def find_average(n):
     for i in range(n):
         number = int(input(f"Enter the number {i+1}: "))
         sum_numbers = sum_numbers + number
-        average = sum_numbers / n
+    average = sum_numbers / n
     
     print(f"The average of {n} numbers you entered: {average}")
 
