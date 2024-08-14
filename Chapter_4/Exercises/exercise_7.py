@@ -38,6 +38,9 @@ def main():
             p2.draw(win)
 
 
+            Text(Point(-1, -7), f'Intersection x points : x1 = {x1}, x2 = {x2}').draw(win)
+
+
 
 
             input()
