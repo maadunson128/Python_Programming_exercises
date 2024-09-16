@@ -1,0 +1,8 @@
+1
+2
+3
+4
+5
+98
+12
+sum of squares of above numbers: 9803
