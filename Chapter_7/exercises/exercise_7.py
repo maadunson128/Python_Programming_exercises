@@ -65,8 +65,8 @@ def calculate_bill(s_hr:int, s_min:int, e_hr:int, e_min:int):
  
     
     #Calculation of after 9PM working hours
-    tot_hrs_2:int = 0
-    tot_mins_2:int = 0
+    tot_hrs_2:float = 0
+    tot_mins_2:float = 0
     
     tot_hrs_2 = tot_hrs - tot_hrs_1
     tot_mins_2 = tot_mins - tot_mins_1
