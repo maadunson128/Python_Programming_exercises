@@ -2,7 +2,7 @@
 import math
 
 #Function to find prime numbers upto n number
-def find_prime_numbers(n):
+def find_prime_numbers(n)->None:
     print(f"Prime numbers between 2 and {n}: ")
     
     for i in range(2, n+1):
@@ -17,7 +17,7 @@ def find_prime_numbers(n):
 
 def main()->None:
     #user input for n -> upper limit upto where prime numbers going to printed
-    n = int(input("Enter the value of n (n>=2): "))
+    n:int = int(input("Enter the value of n (n>=2): "))
 
     find_prime_numbers(n)
 
