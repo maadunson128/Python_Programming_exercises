@@ -1,4 +1,4 @@
-###Program: Dice roller using classes
+###Program: Dice roller with new method to change the color of die pips
 
 
 #button class
@@ -22,7 +22,8 @@ class Button:
         pt2 = Point(self.xmax, self.ymax)
 
         self.rect = Rectangle(pt1, pt2)
-        self.rect.setFill('lightgrey')
+        self.rect.setFill('white')
+        self.rect.setWidth(1)
         self.rect.draw(win)
 
         self.label = Text(center, label)
@@ -90,7 +91,8 @@ class DieView:
         self.pip7 = self.__makepip(cx+offset, cy-offset)
 
         #initial setvlue
-        self.setValue(1)
+        self.value = 1
+        self.setValue(self.value)
 
     def __makepip(self, x, y):
         "Internal helper method to draw a pip at (x,y)" 
@@ -100,9 +102,20 @@ class DieView:
         pip.draw(self.win) 
         return pip 
 
+    def setColor(self, color):
+        '''Function that changes the color of the pips
+        '''
+        self.foreground = color
+        self.setValue(self.value)
+
+
+
+
     def setValue(self, value):
             '''Function that help to show the required value in the die
             '''
+
+            self.value = value
             #initial white background for the pips to disappear
             self.pip1.setFill(self.background)
             self.pip2.setFill(self.background)
@@ -145,14 +158,14 @@ class DieView:
 def main():
 
     #window open
-    win = GraphWin("Dice roller")
+    win = GraphWin("Dice roller", 700, 500)
     win.setCoords(0, 0, 10, 10)
-    win.setBackground("green2")
+    win.setBackground("skyblue")
 
     #draw the interface widgets
     die1 = DieView(win, Point(3, 7), 2)
     die2 = DieView(win, Point(7, 7), 2)
-    rollButton = Button(win, Point(5, 4.5), 6, 1, "Roll Dice")
+    rollButton = Button(win, Point(5, 4.5), 2, 1, "Roll Dice")
     rollButton.activate()
     quitButton = Button(win, Point(5, 1), 2, 1, "Quit")
 
@@ -160,10 +173,17 @@ def main():
     pt = win.getMouse()
     while not quitButton.clicked(pt):
         if rollButton.clicked(pt):
+            randomColor = color_rgb(randrange(0, 256), randrange(0, 256), randrange(0, 256))
+            #die1 setup
             value1 = randrange(1, 7)
             die1.setValue(value1)
+           
+            die1.setColor(randomColor)
+
+            #die 2 setup
             value2 = randrange(1, 7)
             die2.setValue(value2)
+            die2.setColor(randomColor)
             quitButton.activate()
 
         pt = win.getMouse()

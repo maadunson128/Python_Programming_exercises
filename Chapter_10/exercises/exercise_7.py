@@ -1,5 +1,4 @@
-###Program: Dice roller using classes
-
+###Program: Modification of roller program.
 
 #button class
 from graphics import *
@@ -11,19 +10,13 @@ class Button:
     pt is inside the rectangle and return 'True'.
     '''
 
-    def __init__(self, win, center, width, height, label):
-        """Creates a rectangular button."""
+    def __init__(self, win, center, radius, label):
+        """Creates a circular."""
 
-        w, h = width/2.0, height/2.0
-        x, y = center.getX(), center.getY()
-        self.xmin, self.xmax = x-w, w+x
-        self.ymin, self.ymax = y-h, h+y
-        pt1 = Point(self.xmin, self.ymin)
-        pt2 = Point(self.xmax, self.ymax)
-
-        self.rect = Rectangle(pt1, pt2)
-        self.rect.setFill('lightgrey')
-        self.rect.draw(win)
+        self.radius = radius
+        self.center = center
+        self.circle = Circle(center, radius)
+        self.circle.draw(win)
 
         self.label = Text(center, label)
         self.label.draw(win)
@@ -33,8 +26,7 @@ class Button:
     def clicked(self, pt):
         """Return True if button is 'active' and pt is inside the button."""
         return (self.active and
-                self.xmin <= pt.getX() <= self.xmax and
-                self.ymin <= pt.getY() <= self.ymax)
+                self.radius >= ((pt.getX() - self.center.getX())**2 + (pt.getY() - self.center.getY()) **2 ) ** 0.5 )
 
     def getLabel(self):
         """Returns the text in the label."""
@@ -43,13 +35,13 @@ class Button:
     def activate(self):
         """Sets this button to 'active'."""
         self.label.setFill('black')
-        self.rect.setWidth(2)
+        self.circle.setWidth(2)
         self.active = True
 
     def deactivate(self):
         """Sets this button to 'inactive'."""
         self.label.setFill('darkgrey')
-        self.rect.setWidth(1)
+        self.circle.setWidth(1)
         self.active = False
 
 
@@ -145,16 +137,16 @@ class DieView:
 def main():
 
     #window open
-    win = GraphWin("Dice roller")
+    win = GraphWin("Dice roller", 1000, 600)
     win.setCoords(0, 0, 10, 10)
-    win.setBackground("green2")
+    win.setBackground("skyblue")
 
     #draw the interface widgets
     die1 = DieView(win, Point(3, 7), 2)
     die2 = DieView(win, Point(7, 7), 2)
-    rollButton = Button(win, Point(5, 4.5), 6, 1, "Roll Dice")
+    rollButton = Button(win, Point(5, 4.5), 1, "Roll Dice")
     rollButton.activate()
-    quitButton = Button(win, Point(5, 1), 2, 1, "Quit")
+    quitButton = Button(win, Point(5, 1), 1, "Quit")
 
     #sentinel loop
     pt = win.getMouse()
@@ -173,13 +165,3 @@ def main():
 
 main()
             
-    
-                
-            
-                
-
-            
-        
-
-    
-        

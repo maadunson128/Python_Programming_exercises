@@ -70,12 +70,17 @@ def game()->None:
             loses += 1
 
     Text(Point(500, 400), f"Total games won: {wins}\nTotal games lost: {loses}").draw(win)
+    win.getMouse()
 
+    win.close()
     
 def main()->None:
 
     #Creating the game
     game()
+
+
+
         
 
 main()

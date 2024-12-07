@@ -61,5 +61,8 @@ def main()->None:
         Text(Point(500, 400), f"You lose.\nThe correct door: {win_door}").draw(win)
         
 
+    win.getMouse()
+
+    win.close()
 
 main()
