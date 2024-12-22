@@ -17,11 +17,9 @@ class Projectile:
 
     def update(self, time):
         self.xpos = self.xpos + time * self.xvel
-        yvel1 = self.ypos - time * 9.8
-        self.ypos = self.ypos + time * (self.yvel + yvel1) / 2.0
-        self.yvel = yvel1
-
-
+        self.yvel = self.ypos - time * 9.8
+        self.ypos = self.ypos + time * self.yvel
+       
 
 def getInputs():
     a = float(input("Enter the launch angle initially: "))
@@ -37,6 +35,7 @@ def main()->None:
     cball = Projectile(angle, velocity, height)
 
     while cball.getY() >= 0.0:
+        print(cball.getY())
         cball.update(time)
 
     print(f"The total distance travelled by the cannon ball: {cball.getX():0.1f}")
