@@ -1,0 +1,3 @@
+Pradeep,140,400
+Kumar,140,300
+Sowndarya,140, 450	

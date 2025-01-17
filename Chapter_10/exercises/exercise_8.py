@@ -177,7 +177,6 @@ def main():
             #die1 setup
             value1 = randrange(1, 7)
             die1.setValue(value1)
-           
             die1.setColor(randomColor)
 
             #die 2 setup
