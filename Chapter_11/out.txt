@@ -1,0 +1,5 @@
+Name        Hours     Points    GPA       
+Arya             150.0     550.0     3.667
+Sowndarya        110.0     390.0     3.545
+Pradeep          120.0     400.0     3.333
+Kesavan          100.0     300.0     3.000

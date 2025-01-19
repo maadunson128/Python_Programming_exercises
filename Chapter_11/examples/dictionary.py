@@ -29,4 +29,5 @@ def main()->None:
         word, count = items[i]
         print(f"{word} \t {count}")
 
-            
+
+main()
