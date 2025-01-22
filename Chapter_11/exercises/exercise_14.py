@@ -1,7 +1,7 @@
 ###Program: Cards sorter
 class MakeCard:
     def __init__(self, rank, suit):
-        self.rank = rank
+        self.rank = int(rank)
         self.suit = suit
 
     def getRank(self):
@@ -38,6 +38,10 @@ class MakeCard:
         
     def __str__(self):
             return self.getRankName() + " of " + self.getSuitName()
+    
+    def name(self):
+        return self.getRankName() + " of " + self.getSuitName()
+
         
 
 

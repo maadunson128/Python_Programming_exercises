@@ -13,4 +13,8 @@ def shuffle(MyList):
 
     return shuffle_list
 
-print(shuffle([1, 2, 3, 4, 5, 39]))
+def main():
+    print(shuffle([1, 2, 3, 4, 5, 39]))
+
+if __name__ == "__main__":
+    main()

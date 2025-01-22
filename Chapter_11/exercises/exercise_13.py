@@ -26,9 +26,10 @@ class MakeCard:
 
             dict2 = {
                 's': "Spades",
-                'd': "Diamonds",
                 'c': "Clubs",
-                'h': "Hearts"
+                'h': "Hearts",
+                'd': "Diamonds"
+                
             }
 
             return dict1.get(self.rank, str(self.rank)) + " of " + dict2.get(self.suit)
