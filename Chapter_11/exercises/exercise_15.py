@@ -52,9 +52,6 @@ class Deck:
             for suit in ['s', 'c', 'h', 'd']:
                 card = MakeCard(rank, suit)
                 self.cards.append(card)
-                a = MakeCard(rank, suit)
-                print(a)
-    
         
 
     def printCards(self):
@@ -70,6 +67,7 @@ class Deck:
     def dealCard(self):
         '''Returns the Top card and removes from the list'''
         removed_card = self.cards.pop()
+        print(f'Removed Card: {removed_card}')
         
 
     def cardsLeft(self):
@@ -86,9 +84,10 @@ def main()->None:
     
     #removing and printing the cards removed
     deck.dealCard()
-    print(deck.cardsLeft())
 
+    #printing the cards
     deck.printCards()
+    
 
     #printing the number of cards left 
     print(f"Remaining cards left: {deck.cardsLeft()} cards")

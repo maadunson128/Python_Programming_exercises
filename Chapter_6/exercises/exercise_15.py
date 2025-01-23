@@ -49,6 +49,7 @@ def main()->None:
     drawFace(center, size, win)
 
 
-#main()
+if __name__ == "__main__":
+    main()
 
 '''The main function is commented since this file can be used as a module.'''

@@ -9,7 +9,7 @@ def shuffle(MyList):
     for i in range(n):
         rv = random.choice(index_list)
         index_list.remove(rv)
-        shuffle_list[rv] = i
+        shuffle_list[rv] = MyList[i]
 
     return shuffle_list
 
