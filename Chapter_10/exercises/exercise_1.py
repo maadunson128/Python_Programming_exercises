@@ -55,7 +55,7 @@ class Projectile:
 def main()->None:
 
     #getting inputs
-    in_vel, height, angle, time = getInputs()
+    height, in_vel, angle, time = getInputs()
 
     #creating a projectile class for cannonball
     c_ball = Projectile(in_vel, height, angle)
